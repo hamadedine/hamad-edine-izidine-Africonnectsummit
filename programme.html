@@ -1,20 +1,258 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head> 
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<title>Africonnectsummits — programme</title> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriConnect Summit 2026 - Programme</title>
 
-<link 
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
-rel="stylesheet"> 
-
-<link rel="stylesheet" href="css/style.css">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body> 
+<body>
 
-<script 
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-></script> 
+    <header>
+        <nav class="navbar" id="navbar">
+            <a href="index.html" class="logo">
+                AfriConnect Summit 2026
+                <img src="images/logo.png" alt="">
+            </a>
 
-<script src="js/main.js"></script>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="programme.html" class="active">Programme</a></li>
+                <li><a href="intervenants.html">Intervenants</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="contact.html" class="nav-cta">S'inscrire</a>
+                <button id="themeToggle">
+                    <i class="bi bi-moon-stars"></i>
+                </button>
+                <button id="hamburger" class="hamburger">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-hero">
+            <h1>Programme</h1>
+            <nav>
+                <a href="index.html">Accueil</a> > <span>Programme</span>
+            </nav>
+        </section>
+
+        <!-- onglets des 3 jours -->
+        <section class="schedule" id="schedule">
+
+            <div class="tabs">
+                <button class="tab-btn active" data-day="day1">Jour 1</button>
+                <button class="tab-btn" data-day="jour2">Jour 2</button>
+                <button class="tab-btn" data-day="jour3">Jour 3</button>
+            </div>
+
+            <div class="tab-content active" id="day1">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Heure</th>
+                            <th>Session</th>
+                            <th>Intervenant</th>
+                            <th>Salle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09h00</td>
+                            <td>Ouverture officielle</td>
+                            <td>Aicha Diallo</td>
+                            <td>Salle A</td>
+                        </tr>
+                        <tr>
+                            <td>10h00</td>
+                            <td>L'IA en Afrique : etat des lieux</td>
+                            <td>Kwame Mensah</td>
+                            <td>Salle B</td>
+                        </tr>
+                        <tr>
+                            <td>11h30</td>
+                            <td>Financer sa startup tech</td>
+                            <td>Fatou Ndiaye</td>
+                            <td>Salle A</td>
+                        </tr>
+                        <tr>
+                            <td>14h00</td>
+                            <td>Design produit centre utilisateur</td>
+                            <td>Samuel Osei</td>
+                            <td>Salle C</td>
+                        </tr>
+                        <tr>
+                            <td>16h00</td>
+                            <td>Table ronde : avenir de la tech africaine</td>
+                            <td>Tous les intervenants</td>
+                            <td>Salle A</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tab-content" id="day2">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Heure</th>
+                            <th>Session</th>
+                            <th>Intervenant</th>
+                            <th>Salle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09h00</td>
+                            <td>Cybersecurite en Afrique francophone</td>
+                            <td>Kwame Mensah</td>
+                            <td>Salle B</td>
+                        </tr>
+                        <tr>
+                            <td>10h30</td>
+                            <td>Data science appliquee a l'agriculture</td>
+                            <td>Fatou Ndiaye</td>
+                            <td>Salle A</td>
+                        </tr>
+                        <tr>
+                            <td>12h00</td>
+                            <td>Atelier UX/UI</td>
+                            <td>Samuel Osei</td>
+                            <td>Salle C</td>
+                        </tr>
+                        <tr>
+                            <td>14h30</td>
+                            <td>Pitch startups</td>
+                            <td>Aicha Diallo</td>
+                            <td>Salle A</td>
+                        </tr>
+                        <tr>
+                            <td>16h30</td>
+                            <td>Networking sponsors</td>
+                            <td>Tous les intervenants</td>
+                            <td>Hall principal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tab-content" id="day3">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Heure</th>
+                            <th>Session</th>
+                            <th>Intervenant</th>
+                            <th>Salle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09h00</td>
+                            <td>Blockchain et paiements mobiles</td>
+                            <td>Kwame Mensah</td>
+                            <td>Salle B</td>
+                        </tr>
+                        <tr>
+                            <td>10h30</td>
+                            <td>Femmes dans la tech</td>
+                            <td>Fatou Ndiaye</td>
+                            <td>Salle A</td>
+                        </tr>
+                        <tr>
+                            <td>12h00</td>
+                            <td>Design systems a grande echelle</td>
+                            <td>Samuel Osei</td>
+                            <td>Salle C</td>
+                        </tr>
+                        <tr>
+                            <td>14h00</td>
+                            <td>Cloture et remise de prix</td>
+                            <td>Aicha Diallo</td>
+                            <td>Salle A</td>
+                        </tr>
+                        <tr>
+                            <td>15h30</td>
+                            <td>Cocktail de cloture</td>
+                            <td>Tous les intervenants</td>
+                            <td>Hall principal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- thematiques -->
+        <section class="themes" id="themes">
+            <h2>Thematiques de la conference</h2>
+            <div class="themes-grid">
+                <article class="theme-card">
+                    <i class="bi bi-cpu"></i>
+                    <h3>IA & Tech</h3>
+                    <p>Intelligence artificielle, cloud et innovations logicielles.</p>
+                </article>
+                <article class="theme-card">
+                    <i class="bi bi-briefcase"></i>
+                    <h3>Business</h3>
+                    <p>Entrepreneuriat, financement et croissance des startups.</p>
+                </article>
+                <article class="theme-card">
+                    <i class="bi bi-palette"></i>
+                    <h3>Design</h3>
+                    <p>Experience utilisateur et design produit.</p>
+                </article>
+                <article class="theme-card">
+                    <i class="bi bi-bar-chart"></i>
+                    <h3>Data</h3>
+                    <p>Data science et prise de decision par la donnee.</p>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-flex">
+            <div class="footer-col">
+                 <img src="images/logo.png" alt="" class="footer-logo">
+                <h3>AfriConnect Summit</h3>
+                <p>La conference tech panafricaine de reference.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Liens</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright"> <span id="year"></span> AfriConnect Summit. Tous droits reserves.</p>
+        <button id="backToTop">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
