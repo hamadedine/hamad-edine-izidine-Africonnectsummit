@@ -5,33 +5,46 @@
     --noir: #222;
     --blanc: #fff;
     --gris: #f4f4f4;
+
+
+    --font-titre: "Montserrat", sans-serif;
+    --font-corps: "Poppins", sans-serif;
 }
-/* root */
+/* reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 a {
     text-decoration: none;
+     transition: 0.3s ease;
 }
  /* reset */
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-corps);
     color: var(--noir);
     background: var(--gris);
+}
+h1,
+h2,
+h3,
+h4,
+.logo {
+    font-family: var(--font-titre);
 }
 
 /* NAVBAR */
 
 header {
-    background: white;
+    background: var(--blanc);
     padding: 15px 8%;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 8px #ddd;
+    box-shadow: 0 2px 8px var(--gris);
 }
 
 .navbar {
@@ -46,7 +59,7 @@ header {
     gap: 10px;
     color: var(--jaune);
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .logo img {
@@ -60,7 +73,8 @@ header {
 }
 
 .nav-links a {
-    color: #333;
+    color: var(--noir);
+    transition: 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -75,7 +89,7 @@ header {
 
 .nav-cta {
     background: var(--jaune);
-    color: white;
+    color: var(--blanc);
     padding: 10px 20px;
     border-radius: 5px;
 }
@@ -103,9 +117,7 @@ button {
     text-align: center;
     color: white;
 }
-.hero-content{
-    animation: apparition 1s ease;
-}
+
 
 .hero-video {
     position: absolute;
@@ -126,6 +138,7 @@ button {
     z-index: 2;
 }
 
+
 .hero h1 {
     font-size: 45px;
     margin-bottom: 15px;
@@ -145,14 +158,16 @@ button {
     border-radius: 5px;
     margin: 5px;
 }
-
+.btn:hover {
+    transform: translateY(-3px);
+}
 .btn-primary {
     background: var(--jaune);
     color: black;
 }
 
 .btn-secondary {
-    background: white;
+    background: var(--blanc);
     color: var(--vert);
 }
 
@@ -163,7 +178,7 @@ button {
 }
 
 .countdown-item {
-    background: white;
+    background: var(--blanc);
     color: var(--vert);
     padding: 15px;
     border-radius: 8px;
@@ -197,6 +212,7 @@ button {
     text-align: center;
     padding: 25px;
     border-radius: 10px;
+     transition: 0.3s ease;
 }
 
 .stat-number {
@@ -258,8 +274,8 @@ button {
 }
 
 .why-card {
-    background: white;
-    color: #222;
+    background: var(--blanc);
+    color: var(--noir);
     width: 300px;
     padding: 25px;
     text-align: center;
@@ -292,7 +308,7 @@ button {
     background: var(--vert);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 5px 10px #ddd;
+    box-shadow: 0 5px 10px var(--gris);
 }
 .speaker-card:hover {
     transform: translateY(-5px);
@@ -519,7 +535,7 @@ th {
 
 td {
     padding: 15px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--gris);
 }
 
 tr:hover {
@@ -609,7 +625,7 @@ tr:hover {
     padding: 25px;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 5px 15px #ddd;
+    box-shadow: 0 5px 15px var(--gris);
     transition: 0.3s;
 }
 
@@ -690,7 +706,7 @@ tr:hover {
     width: 100%;
     padding: 12px;
 
-    border: 1px solid #ccc;
+    border: 1px solid var(--gris);
     border-radius: 5px;
 
     font-size: 15px;
@@ -811,16 +827,16 @@ body.dark-mode .map-section {
     background: var(--noir);
     color: var(--blanc);
 }
-/* Champs du formulaire */
+
 body.dark-mode input,
 body.dark-mode select,
 body.dark-mode textarea {
     background: var(--noir);
     color: var(--blanc);
-    border: 1px solid #555;
+    border: 1px solid var(--gris);
 }
 
-/* Lignes du tableau */
+
 body.dark-mode tr:hover {
     background: var(--noir);
 }
@@ -829,11 +845,6 @@ body.dark-mode .nav-cta {
     color: var(--noir);
 }
 
-
-body.dark-mode .nav-cta:hover {
-    background: var(--jaune);
-    color: var(--noir);
-}
 body.dark-mode #themeToggle {
     background: var(--jaune);
     color: var(--noir);
@@ -908,7 +919,6 @@ body.dark-mode #backToTop {
     color: var(--noir);
 }
 
-/* dark mode bouttons */
 body.dark-mode .btn-primary {
     background: var(--jaune);
     color: var(--noir);
@@ -916,4 +926,31 @@ body.dark-mode .btn-primary {
 body.dark-mode .btn-secondary {
     background: var(--noir);
     color: var(--jaune);
+}
+@media (max-width: 768px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .stats-grid,
+    .speakers-grid,
+    .themes-grid,
+    .speakers-full-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-flex,
+    .footer-flex {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
 }
