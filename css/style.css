@@ -441,15 +441,26 @@ footer {
     text-align: center;
     margin-top: 30px;
 }
-
 #backToTop {
     position: fixed;
     bottom: 20px;
     right: 20px;
+
     background: var(--vert);
     color: var(--blanc);
+
     padding: 12px;
     border-radius: 50%;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
 }
 /* PAGE HERO */
 
@@ -538,9 +549,6 @@ td {
     border-bottom: 1px solid var(--gris);
 }
 
-tr:hover {
-    background: var(--gris);
-}
 
 /* THEMATIQUES */
 
@@ -749,7 +757,11 @@ tr:hover {
     background: var(--gris);
 }
 
-.faq h2,
+.faq h2 {
+    text-align: center;
+    color: var(--jaune);
+    margin-bottom: 30px;
+}
 .map-section h2 {
 
     text-align: center;
@@ -827,19 +839,20 @@ body.dark-mode .map-section {
     background: var(--noir);
     color: var(--blanc);
 }
-
-body.dark-mode input,
-body.dark-mode select,
-body.dark-mode textarea {
+body.dark-mode .accordion-item {
     background: var(--noir);
+}
+
+body.dark-mode .accordion-header {
     color: var(--blanc);
-    border: 1px solid var(--gris);
+}
+
+body.dark-mode .accordion-content {
+    color: var(--blanc);
 }
 
 
-body.dark-mode tr:hover {
-    background: var(--noir);
-}
+
 body.dark-mode .nav-cta {
     background: var(--jaune);
     color: var(--noir);
@@ -872,6 +885,14 @@ body.dark-mode header {
 body.dark-mode a {
     color: var(--blanc);
 }
+body.dark-mode .nav-links{
+    background: var(--noir);
+}
+
+body.dark-mode .nav-links a{
+    color: var(--blanc);
+}
+
 
 body.dark-mode .nav-links a:hover {
     color: var(--jaune);
@@ -914,10 +935,6 @@ body.dark-mode th {
     color: var(--noir);
 }
 
-body.dark-mode #backToTop {
-    background: var(--jaune);
-    color: var(--noir);
-}
 
 body.dark-mode .btn-primary {
     background: var(--jaune);
@@ -929,28 +946,59 @@ body.dark-mode .btn-secondary {
 }
 @media (max-width: 768px) {
 
-    .nav-links {
-        display: none;
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
-    .hamburger {
+    .hamburger{
         display: block;
+    }
+
+    .nav-links{
+        order: 3;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        background: var(--blanc);
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.4s ease;
+        gap: 15px;
+    }
+    .nav-actions{
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    .nav-links.active{
+        max-height: 300px;
+        padding: 20px 0;
     }
 
     .stats-grid,
     .speakers-grid,
     .themes-grid,
-    .speakers-full-grid {
+    .speakers-full-grid{
         grid-template-columns: 1fr;
     }
 
     .contact-flex,
-    .footer-flex {
+    .footer-flex{
         flex-direction: column;
     }
 
-    .hero h1 {
+    .hero h1{
         font-size: 30px;
     }
-
 }
