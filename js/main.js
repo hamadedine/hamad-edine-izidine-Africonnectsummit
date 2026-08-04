@@ -144,3 +144,87 @@ formulaire.addEventListener("submit", function(e){
         }
     });
 }
+// stats
+let statNumbers = document.querySelectorAll(".stat-number");
+let statsactive = false;
+
+function lancerStats() {
+    for (let i = 0; i < statNumbers.length; i++) {
+        animerNombre(statNumbers[i]);
+    }
+}
+
+function animerNombre(element) {
+    let cible = parseInt(element.getAttribute("data-target"));
+    let valeur = 0;
+    let vitesse = Math.ceil(cible / 100);
+
+    let interval = setInterval(function () {
+        valeur = valeur + vitesse;
+        if (valeur >= cible) {
+            valeur = cible;
+            clearInterval(interval);
+        }
+        element.textContent = valeur;
+    }, 30);
+}
+
+let statsSection = document.getElementById("stats");
+
+if (statsSection) {
+    let observerStats = new IntersectionObserver(function (entrees) {
+        for (let i = 0; i < entrees.length; i++) {
+            if (entrees[i].isIntersecting && statsactive === false) {
+                lancerStats();
+                statsactive = true;
+            }
+        }
+    });
+
+    observerStats.observe(statsSection);
+}
+// programmes jour 1,2,3
+let tabButtons = document.querySelectorAll(".tab-btn");
+let tabContents = document.querySelectorAll(".tab-content");
+
+for (let i = 0; i < tabButtons.length; i++) {
+    tabButtons[i].addEventListener("click", function () {
+        let jourChoisi = this.getAttribute("data-day");
+
+        // on enleve active partout
+        for (let j = 0; j < tabButtons.length; j++) {
+            tabButtons[j].classList.remove("active");
+        }
+        for (let k = 0; k < tabContents.length; k++) {
+            tabContents[k].classList.remove("active");
+        }
+        this.classList.add("active");
+        document.getElementById(jourChoisi).classList.add("active");
+    });
+}
+// compte a rebours 
+let dateConference = new Date("2026-11-12T09:00:00");
+
+let elemJours = document.getElementById("days");
+let elemHeures = document.getElementById("hours");
+let elemMinutes = document.getElementById("minutes");
+let elemSecondes = document.getElementById("seconds");
+
+if (elemJours) {
+    setInterval(function () {
+        let maintenant = new Date();
+        let difference = dateConference - maintenant;
+
+        let jours = Math.floor(difference / (1000 * 60 * 60 * 24));
+        let heures = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        let minutes = Math.floor((difference / (1000 * 60)) % 60);
+        let secondes = Math.floor((difference / 1000) % 60);
+
+        elemJours.textContent = jours;
+        elemHeures.textContent = heures;
+        elemMinutes.textContent = minutes;
+        elemSecondes.textContent = secondes;
+    }, 1000);
+}
+
+
