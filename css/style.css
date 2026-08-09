@@ -815,6 +815,11 @@ td {
 }
 
 /* CARTE */
+.iframe{
+    width: 600px;
+    height: 400px;
+    border: 0;
+}
 
 .map-section {
 
