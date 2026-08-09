@@ -32,7 +32,7 @@ AfriConnect Summit 2026 est un site web vitrine pour un sommet fictif consacré 
 
 ## Aperçu
 
-<img src="./capture.png" alt="Capture d'écran du site">
+<img src="./images/capture.png" alt="Capture d'écran du site">
 
 
 ##  Lancer le projet localement
